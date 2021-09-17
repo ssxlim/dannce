@@ -9,7 +9,7 @@
 #SBATCH -n 8
 #SBATCH -p scavenger-gpu
 #SBATCH --gres=gpu:1
-#SBATCH --exclude=dcc-tdunn-gpu-01
+#SBATCH --exclude=dcc-tdunn-gpu-01,dcc-lefkowitz-gpu-05,dcc-mastatlab-gpu-01
 module load Anaconda3/5.1.0
 source activate dannce
 dannce-predict-single-batch "$@"

@@ -9,6 +9,8 @@
 #SBATCH -c 8
 #SBATCH -p olveczkygpu,gpu
 #SBATCH --gres=gpu:1
+#SBATCH --exclude=dcc-tdunn-gpu-01,dcc-lefkowitz-gpu-05,dcc-mastatlab-gpu-01
+
 module load Anaconda3/5.0.1-fasrc02
 source activate dannce
 com-predict "$@"
