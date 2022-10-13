@@ -1,0 +1,70 @@
+# File name of io.yaml file, which should exist in the directory from which you
+# call dannce functions
+io_config: io.yaml
+
+# If training from scratch, set to the desired number of output channels (i.e. keypoints)
+# If fine-tuning, this must match the previous number of output channels, and the new desired
+# number is set by new_n_channels_out
+n_channels_out: 20
+mono: True
+
+# New number of network output channels.
+new_n_channels_out: 20
+# New size of the final output kernel
+new_last_kernel_size: [3,3,3]
+
+# Batch size for training and prediction
+batch_size: 4
+
+# DANNCE training option. Sets the number of epochs during training (default 1200)
+epochs: 600
+
+# DANNCE training option. Learning rate for the Adam optimizer. Default 1e-3.
+#lr: 1e-3
+
+# name of the network architecture (see nets.py) 'unet3d_big' (from scratch?)
+net_type: AVG
+
+# Options:
+# 'new': initializes and trains a network from scratch
+# 'finetune': loads in pre-trained weights and fine-tuned from there
+# 'continued': initializes a full model, including optimizer state, and continuous training from the last full model checkpoint
+#train_mode: finetune
+train_mode: finetune
+dannce_finetune_weights: ./weights/
+#dannce_finetune_weights: /media/twd/dannce-pd/PDBmirror/VQ1/DANNCE/train_results/AVG_finetune_0layerslocked_r1/weights_1155/
+
+#from_weights: True
+
+# How many samples from each animal do you want to (randomly) set aside for a validation metric?
+num_validation_per_exp: 10
+
+# Limits (in mm) to 3D volumes anchored on subject
+vmin: -60
+vmax: 60
+# Number of voxels along each spatial dimension
+nvox: 64
+
+# max. number of batches to evaluate during prediction. set to 'max' to evaluate over all data/video frames
+max_num_samples: 'max'
+# By default, will load in the first hdf5 file at this location for fine-tuning. If training from scratch, set to None
+#dannce_finetune_weights: ./DANNCE/weights/
+
+#Training Augmentation
+rotate: True
+augment_hue: False
+augment_brightness: False
+
+mirror: True
+
+n_layers_locked: 2
+
+drop_landmark: [7]
+
+n_rand_views: 5
+#debug_volume_tifdir: ./debug_dannce_volumes/
+
+#load_valid: /media/twd/dannce-pd/PDBmirror/VQ1/DANNCE/train_results/AVG/
+
+# Median filter to smooth 3D COM traces before generating volumes
+medfilt_window: 40

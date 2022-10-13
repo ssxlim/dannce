@@ -1,0 +1,12 @@
+Anaconda3 5.1.0
+2021-09-25 19:38:30.675312: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+Traceback (most recent call last):
+  File "/hpc/home/sl498/.conda/envs/dannce/bin/com-predict-multi-gpu", line 33, in <module>
+    sys.exit(load_entry_point('dannce', 'console_scripts', 'com-predict-multi-gpu')())
+  File "/hpc/group/tdunn/sxl/dannce/cluster/multi_gpu.py", line 505, in com_predict_multi_gpu
+    handler = MultiGpuHandler(**args.__dict__)
+  File "/hpc/group/tdunn/sxl/dannce/cluster/multi_gpu.py", line 80, in __init__
+    self.dannce_file = self.load_dannce_file()
+  File "/hpc/group/tdunn/sxl/dannce/cluster/multi_gpu.py", line 106, in load_dannce_file
+    raise FileNotFoundError("No dannce.mat file found.")
+FileNotFoundError: No dannce.mat file found.
