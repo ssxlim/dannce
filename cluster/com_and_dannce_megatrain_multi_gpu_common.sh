@@ -10,7 +10,7 @@
 #SBATCH -N 1
 #SBATCH -c 1
 #SBATCH -p common
-#SBATCH --exclude=dcc-tdunn-gpu-02,dcc-lefkowitz-gpu-05,dcc-mastatlab-gpu-01,dcc-gehmlab-gpu-04,dcc-dhvi-gpu-01,dcc-dhvi-gpu-02,dcc-allenlab-gpu-03,dcc-allenlab-gpu-04,dcc-youlab-gpu-01
+#SBATCH --exclude=dcc-tdunn-gpu-02,dcc-mastatlab-gpu-01,dcc-gehmlab-gpu-04,dcc-dhvi-gpu-01,dcc-dhvi-gpu-02,dcc-allenlab-gpu-03,dcc-allenlab-gpu-04,dcc-youlab-gpu-01
 set -e
 
 # Setup the dannce environment
